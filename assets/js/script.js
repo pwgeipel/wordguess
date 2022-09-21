@@ -2,11 +2,11 @@ var startBTN = document.querySelector('.start-button')
 var wordBlanksEl = document.querySelector('.word-blanks')
 // var validChars = "abcdefghijklmnopqrstuvwxyz"
 var words = ['pretzel', 'macarons', 'croissant', 'javascript', 'variable', 'python']
-var word = 
+var word  
 // score variable
 // time remaining variable
 
-function handleKeydown() {    
+function handleKeydown(event) {    
     if (validChars.includes(event.key)) {
         
     }
