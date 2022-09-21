@@ -1,16 +1,14 @@
-
 var startBTN = document.querySelector('.start-button')
 var wordBlanksEl = document.querySelector('.word-blanks')
-var validChars = "abcdefghijklmnopqrstuvwxyz"
-
+// var validChars = "abcdefghijklmnopqrstuvwxyz"
 var words = ['pretzel', 'macarons', 'croissant', 'javascript', 'variable', 'python']
 var word = 
 // score variable
 // time remaining variable
 
-function handleKeydown(event) {
+function handleKeydown(event) {    
     if (validChars.includes(event.key)) {
-
+        
     }
 }
 // reset thje word-blanks - an _ for each letter of the new word
@@ -20,8 +18,9 @@ function renderCharacters() {
         str += "_ "
         console.log(str)
     }
+    wordBlanksEl.textContent = str.trim()
 }
-wordBlanksEl.textContent = str.trim()
+
 
 function startRound() {
     var randomindex = Math.floor(Math.random() * words.length)
@@ -31,4 +30,4 @@ function startRound() {
 
 startBTN.addEventListener("click", startRound)
 
-     document.addEventListener('keydown', handleKeydown)          
+document.addEventListener('keydown', handleKeydown)
