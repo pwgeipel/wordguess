@@ -6,7 +6,21 @@ var words = ['pretzel', 'macarons', 'croissant', 'javascript', 'variable', 'pyth
 var word  
 var guessedCharacters = []
 var score = 0
-// time remaining variable
+var timeLeft = 15
+var intervalID
+var timerEl = document.querySelector('.timer-count')
+
+function startCountdown () {
+    clearInterval(intervalID)
+    setInterval(function() {
+        timeLeft--
+        timerEl.textContent = timeLeft
+        if (timeLeft === 0) {
+            clearInterval(intervalID)
+            wordBlanksEl.innerText = "Game Over! Your score is " + score
+        }
+    }, 1000)
+}
 
 function checkWord() {
     var wordFromDOM = wordBlanksEl.textContent.split(' ').join('')
@@ -49,6 +63,7 @@ function startRound() {
     var randomindex = Math.floor(Math.random() * words.length)
     word = words[randomindex]
     renderCharacters()
+    startCountdown()
 }
 
 startBTN.addEventListener("click", startRound)
