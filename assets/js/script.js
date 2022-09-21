@@ -6,7 +6,7 @@ var word =
 // score variable
 // time remaining variable
 
-function handleKeydown(event) {    
+function handleKeydown() {    
     if (validChars.includes(event.key)) {
         
     }
